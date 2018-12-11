@@ -7,15 +7,17 @@ b-container.menu-wrapper(fluid='')
             b-collapse#nav_collapse(is-nav='')
                 b-navbar-nav
                     b-nav-item.nav-item(v-for="link in menu", :to="link.url") {{ link.title }}
-            b-navbar-nav.ml-auto
-                b-nav-form.search-form
-                    b-form-input.mr-sm-2(size='sm', type='text', placeholder='Поиск')
-                    font-awesome-icon.icon(icon='search')
+            search
 </template>
 
 <script>
+import search from '@/components/search/search'
+
 export default {
     name: 'navbar',
+    components: {
+        search
+    },
     data () {
         return {
             menu: [
