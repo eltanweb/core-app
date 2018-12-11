@@ -1,0 +1,31 @@
+version: '3'
+services:
+
+  php:
+    build:
+      context: ./docker/php/
+      dockerfile: Dockerfile
+    volumes:
+      - ./application:/var/www/html/
+    links:
+      - mysql
+
+  mysql:
+    image: mariadb:10.4
+    ports:
+      - 3306
+    volumes:
+      - ./docker/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+
+  nginx:
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    links:
+      - php
+    volumes:
+      - ./application:/var/www/html/

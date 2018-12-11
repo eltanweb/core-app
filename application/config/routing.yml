@@ -1,0 +1,37 @@
+#название страницы
+homepage:
+# роутинг url
+  url: /
+# параметры запроса.
+  param: { module: Index, action: index }
+  requirements:
+    method: [get]
+
+pages:
+  url: /:name
+  param: { module: pages, action: index }
+  requirements:
+    name: \w+
+    method: [get]
+
+emitents:
+  url: /emitent
+  param: { module: emitent, action: index }
+  requriments:
+    method: [get]
+
+  url: /emitent/:name
+  param: { module: emitent, action:  }
+  requirements:
+    name: \wd+
+    method: [get]
+
+  url: /emitent/:name/:stock
+  param: { module: emitent, action: stock }
+
+indicators:
+  url: /indicators
+  param: { module: indicator, action: }
+  requirements:
+    name: \wd+
+    method: [get]
