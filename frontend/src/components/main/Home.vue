@@ -1,49 +1,27 @@
 <template lang="pug">
-b-container
-  b-row
-    b-col(cols="8")
-      articleDay
-    b-col.banners(cols="4")
-      .banner 
-          img(src='https://tpc.googlesyndication.com/simgad/11875537060489082839')
-  b-row        
-    b-col(cols="4")
-      b-link.category-name(to="category") в нахлыст
-        img.img-thumbnail(src="https://fion.ru/images/photo/bedfaedc8418db84c638ba4dddf8dfc8.jpg")
-        | Быстрые крэнки для агрессивных окуней
-      b-link.category-name(to="category") в нахлыст
-        b-media(left-align='', vertical-align='center')
-            b-img(slot='aside', src='https://forum.akvabanka.ru/data/avatars/m/0/755.jpg?1449846455', blank-color='#ccc', width='80', alt='placeholder')
-            h5.mt-0.mb-1 Нахлыст на водохранилищах
-            |  В понимании людей, ни разу не ловивших на мушку
-    b-col(cols="4")
-      b-link.category-name(to="category") в нахлыст
-        img.img-thumbnail(src="https://fion.ru/images/photo/bedfaedc8418db84c638ba4dddf8dfc8.jpg")
-        | Быстрые крэнки для агрессивных окуней
-      b-link.category-name(to="category") в нахлыст
-         b-media(left-align='', vertical-align='center')
-            b-img(slot='aside', src='https://forum.akvabanka.ru/data/avatars/m/0/755.jpg?1449846455', blank-color='#ccc', width='80', alt='placeholder')
-            h5.mt-0.mb-1 Нахлыст на водохранилищах
-            |  В понимании людей, ни разу не ловивших на мушку
-    b-col(cols="4")
-      b-link.category-name(to="category") в нахлыст
-        img.img-thumbnail(src="https://fion.ru/images/photo/bedfaedc8418db84c638ba4dddf8dfc8.jpg")
-        | Быстрые крэнки для агрессивных окуней
-      b-link.category-name(to="category") в нахлыст
-         b-media(left-align='', vertical-align='center')
-            b-img(slot='aside', src='https://forum.akvabanka.ru/data/avatars/m/0/755.jpg?1449846455', blank-color='#ccc', width='80', alt='placeholder')
-            h5.mt-0.mb-1 Нахлыст на водохранилищах
-            |  В понимании людей, ни разу не ловивших на мушку
+b-container(fluid='')
+  b-container
+    b-row
+      b-col(cols="8")
+        articleDay
+      b-col.banners(cols="4")
+        .banner 
+            img(src='https://tpc.googlesyndication.com/simgad/11875537060489082839')
+  div.block-category
+    b-container
+      category
       
 </template>
 
 <script>
 import articleDay from '@/components/widgets/articleDay/articleDay'
+import category from '@/components/category/category'
 
 export default {
   name: 'home',
   components: {
-    articleDay
+    articleDay,
+    category
   },
   data () {
     return {
@@ -65,6 +43,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.container-fluid {
+  padding: 0px;
+  margin: 0px;
+}
 .banners{
   padding: 10px;
 }
@@ -79,5 +61,10 @@ export default {
   font-size: 22px;
   color: red;
   text-decoration: none;
+}
+.block-category {
+  background-color: rgb(243, 243, 243);
+  margin: 0px;
+  padding: 0px;
 }
 </style>

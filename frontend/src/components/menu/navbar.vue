@@ -7,7 +7,7 @@ b-container.menu-wrapper(fluid='')
             b-collapse#nav_collapse(is-nav='')
                 b-navbar-nav
                     b-nav-item.nav-item(v-for="link in menu", :to="link.url") {{ link.title }}
-            search
+            //- search
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
     data () {
         return {
             menu: [
-                { title: 'Поплавочная', url: '/' },
+                { title: 'Поплавочная', url: '/',pageTitle:'asdasd' },
                 { title: 'Донная', url: '/category' },
                 { title: 'Спининг', url: '/page' },
                 { title: 'Зимняя рыбалка', url: '/login' },

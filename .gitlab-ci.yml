@@ -1,0 +1,2 @@
+before-script:
+  - apt-get update -qq &&
